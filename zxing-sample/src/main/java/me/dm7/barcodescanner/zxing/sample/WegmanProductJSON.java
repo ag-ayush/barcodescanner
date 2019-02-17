@@ -84,8 +84,9 @@ public class WegmanProductJSON {
     }
 
     public static String upcToProductData(String upc){
-        String key = "f402d188f3b14f29afeae5456d85ecff";
-        int sku = getSKU(upc, key);
+        String key = "5036d8214f9e47a5ae6bfa2204cb0903";
+//        int sku = getSKU(upc, key);
+        int sku = 37979;
         return getProductData(sku, key);
     }
 }
