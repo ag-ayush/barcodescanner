@@ -27,14 +27,6 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
     }
 
-    public void launchSimpleActivity(View v) {
-        launchActivity(SimpleScannerActivity.class);
-    }
-
-    public void launchSimpleFragmentActivity(View v) {
-        launchActivity(SimpleScannerFragmentActivity.class);
-    }
-
     public void launchFullActivity(View v) {
         launchActivity(FullScannerActivity.class);
     }
@@ -43,16 +35,8 @@ public class MainActivity extends AppCompatActivity {
         launchActivity(FullScannerFragmentActivity.class);
     }
 
-    public void launchFullScreenScannerFragmentActivity(View v) {
-        launchActivity(FullScreenScannerFragmentActivity.class);
-    }
-
     public void launchCustomViewFinderScannerActivity(View v) {
         launchActivity(CustomViewFinderScannerActivity.class);
-    }
-
-    public void launchScalingScannerActivity(View v) {
-        launchActivity(ScalingScannerActivity.class);
     }
 
     public void launchActivity(Class<?> clss) {

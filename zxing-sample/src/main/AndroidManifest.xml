@@ -31,29 +31,10 @@
                        android:value="splitActionBarWhenNarrow" />
         </activity>
 
-        <activity android:name=".SimpleScannerActivity"
-                android:theme="@style/AppOverlayTheme"
-                android:label="@string/simple_scanner_activity">
-        </activity>
-
-        <activity android:name=".SimpleScannerFragmentActivity"
-                android:theme="@style/AppOverlayTheme"
-                android:label="@string/simple_scanner_fragment_activity">
-        </activity>
-
-        <activity android:name=".FullScreenScannerFragmentActivity"
-                  android:theme="@style/AppOverlayTheme"
-                android:label="@string/full_screen_scanner_fragment_activity">
-      </activity>
-
       <activity android:name=".CustomViewFinderScannerActivity"
                 android:theme="@style/AppTheme"
                 android:label="@string/custom_view_finder_scanner_activity">
       </activity>
 
-      <activity android:name=".ScalingScannerActivity"
-                android:theme="@style/AppTheme"
-                android:label="@string/scaling_scanner_activity">
-      </activity>
     </application>
 </manifest>

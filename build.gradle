@@ -42,7 +42,7 @@ subprojects {
                 }
 
                 defaultConfig {
-                    minSdkVersion versions.min_sdk
+                    minSdkVersion 23
                     targetSdkVersion versions.target_sdk
                     versionCode 1913
                     versionName "1.9.13"

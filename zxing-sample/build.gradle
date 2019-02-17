@@ -6,6 +6,8 @@ dependencies {
     implementation libraries.support_v4
     implementation libraries.appcompat_v7
     implementation libraries.design_support
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.7'
 }
 
 android {
