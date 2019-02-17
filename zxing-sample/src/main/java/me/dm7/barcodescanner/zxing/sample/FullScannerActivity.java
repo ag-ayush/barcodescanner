@@ -146,9 +146,8 @@ public class FullScannerActivity extends BaseScannerActivity implements MessageD
             r.play();
         } catch (Exception e) {}
         String barcode = rawResult.getBarcodeFormat().toString();
-
-        showMessageDialog("Contents = " + rawResult.getText() + ", Format = " + rawResult.getBarcodeFormat().toString());
-        // TODO:
+        String output = WegmanProductJSON.upcToProductData(barcode);
+        showMessageDialog(output);
     }
 
     public void showMessageDialog(String message) {

@@ -31,14 +31,6 @@ public class MainActivity extends AppCompatActivity {
         launchActivity(FullScannerActivity.class);
     }
 
-    public void launchFullFragmentActivity(View v) {
-        launchActivity(FullScannerFragmentActivity.class);
-    }
-
-    public void launchCustomViewFinderScannerActivity(View v) {
-        launchActivity(CustomViewFinderScannerActivity.class);
-    }
-
     public void launchActivity(Class<?> clss) {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {

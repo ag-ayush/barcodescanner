@@ -12,15 +12,9 @@ import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
-public class wegTest{
+public class WegmanProductJSON {
 
-    private String subKey;
-
-    public wegTest(String subKey){
-        this.subKey = subKey;
-    }
-
-    public int getSKU(String barcodeUPC){
+    private static int getSKU(String barcodeUPC, String key){
         int sku = 0;
         try{
             // first make the url we need
@@ -32,7 +26,7 @@ public class wegTest{
             URIBuilder barcodeBuilder = new URIBuilder(barcodeUrl);
             URI barcodeUri = barcodeBuilder.build();
             HttpGet barcodeRequest = new HttpGet(barcodeUri);
-            barcodeRequest.setHeader("Subscription-Key", this.subKey);
+            barcodeRequest.setHeader("Subscription-Key", key);
 
 
             // get the response back
@@ -61,7 +55,7 @@ public class wegTest{
         return sku;
     }
 
-    public String getProductData(int sku){
+    private static String getProductData(int sku, String key){
         String productInfo = "";
         try{
             // make the main http client
@@ -72,7 +66,7 @@ public class wegTest{
             URIBuilder builder = new URIBuilder(url);
             URI uri = builder.build();
             HttpGet request = new HttpGet(uri);
-            request.setHeader("Subscription-Key", this.subKey);
+            request.setHeader("Subscription-Key", key);
 
             HttpResponse response = httpClient.execute(request);
             HttpEntity entity = response.getEntity();
@@ -89,21 +83,9 @@ public class wegTest{
         return productInfo;
     }
 
-    public String upcToProductData(String upc){
-        int sku = getSKU(upc);
-        return getProductData(sku);
-    }
-
-
-    public static void main(String[] args){
-        String authInfo = args[0];
-        String upc = args[1];
-
-        wegTest weg = new wegTest(authInfo);
-
-        Integer sku = weg.getSKU(upc);
-        System.out.println(sku);
-
-        System.out.println(weg.upcToProductData(upc));
+    public static String upcToProductData(String upc){
+        String key = "f402d188f3b14f29afeae5456d85ecff";
+        int sku = getSKU(upc, key);
+        return getProductData(sku, key);
     }
 }
